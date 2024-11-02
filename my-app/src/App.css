@@ -1,9 +1,11 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .App {
     text-align: center;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #282c34;
 }
 
@@ -29,10 +31,8 @@
   color: white;
 }
 
-
 .Videos {
-  padding: "10px 20px",
-
+  padding: 10px 20px;
 }
 
 .App-link {
@@ -106,7 +106,7 @@
   margin: 5px 0;
   font-size: 0.9em;
   color: #444;
-  background-color: #f6f2fa; /* Light blue background for replies */
+  background-color: #f6f2fa; /* Light background for replies */
   padding: 8px;
   border-radius: 5px;
 }
@@ -122,11 +122,10 @@
   color: #999; /* Softer gray */
 }
 
-/* Optional: Style for a "New Reply" button */
 .new-reply {
   margin-top: 20px;
   padding: 10px 15px;
-  background-color: #440078; /* Bootstrap blue */
+  background-color: #1aaa9; /* Updated to teal */
   color: white;
   border: none;
   border-radius: 5px;
@@ -135,7 +134,7 @@
 }
 
 .new-reply:hover {
-  background-color: #821bd1; /* Darker blue on hover */
+  background-color: #148a81; /* Darker teal on hover */
 }
 
 .replyform {
@@ -146,7 +145,6 @@
   width: 300px;
 }
 
-/* Centering container */
 .centered-container {
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -154,7 +152,6 @@
   background-color: #282c34; /* Optional: background color for the container */
 }
 
-/* Centering container */
 .centered-container-white {
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -162,28 +159,18 @@
   background-color: #ffffff; /* Optional: background color for the container */
 }
 
-
-.replyform{
-  background-color: #FFFFFF;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  width: 300px;
-}
-
-.inputreply{
+.inputreply {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #440078;
+  border: 1px solid #1aaa9; /* Teal border */
   border-radius: 4px;
   background-color: #FFFFFF;
-  color: white;
-  
+  color: black;
 }
 
 button:hover {
-  background-color: #821bd1;
+  background-color: #148a81; /* Teal hover color */
 }
 
 .error-message {
