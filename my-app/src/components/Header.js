@@ -23,10 +23,10 @@ const Header = () => {
                 <ul>
                     <li>
                         <Link
-                            to="/lessonBot"
-                            className={location.pathname === "/lessonBot" ? "active" : ""}
+                            to="/handlelessonsubmit"
+                            className={location.pathname === "/handlelessonsubmit" ? "active" : ""}
                         >
-                            LessonBot
+                            Lesson Input
                         </Link>
                     </li>
                     <li>

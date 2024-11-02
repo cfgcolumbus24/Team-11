@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './input.css';
 
-function LessonInput({ onSubmit }) {
+function LongInput({ onSubmit }) {
   const [lessonInfo, setLessonInfo] = useState('');
 
   const handleSubmit = (e) => {
@@ -47,4 +47,4 @@ function LessonInput({ onSubmit }) {
   );
 }
 
-export default LessonInput;
+export default LongInput;

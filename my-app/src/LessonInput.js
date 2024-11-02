@@ -24,17 +24,33 @@ import React, { useState } from 'react';
 import LLM from './LLMPage';
 import Header from './components/Header';
 
-const LessonBot = () => {
+const LessonInput = ({handleLessonSubmitFunction}) => {
     const [grade, setGrade] = useState('');
     const [subject, setSubject] = useState('');
     const [classSize, setClassSize] = useState('');
     const [time, setTime] = useState('');
+    const [loading, setLoading] = useState(false);
 
+    const handleSubmit = (e) => {
+        console.log("Received handleLessonSubmitFunction:", handleLessonSubmitFunction);
+      e.preventDefault();
+      console.log("Class Info:", { grade, subject, classSize, time });
+      const data = {
+        grade: grade,
+        subject: subject,
+        classSize: classSize,
+        time: time
+    }
+      handleLessonSubmitFunction(data);
+      setLoading(true);
+  
+    };
+  
     return (
         <div style={{ backgroundColor: '#282c34', minHeight: '100vh', paddingBottom: '20px' }}>
             <Header />
             <h1 className="gradient-title">Generate Your Lesson Plan!</h1>
-
+            
             <div className="lesson-form">
                 <h2 className="form-title">Enter Lesson Information</h2>
                 <input
@@ -65,7 +81,7 @@ const LessonBot = () => {
                     onChange={(e) => setTime(e.target.value)}
                     className="input-field"
                 />
-                <button className="submit-button">Submit</button>
+                <button type="submit" onClick = {(e) => handleSubmit(e)} className="submit-button">Submit</button>
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '20px' }}>
@@ -75,4 +91,4 @@ const LessonBot = () => {
     );
 };
 
-export default LessonBot;
+export default LessonInput;
