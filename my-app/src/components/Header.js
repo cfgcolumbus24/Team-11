@@ -17,8 +17,10 @@ const Header = () => {
                 </Link>
             </div>
             <nav>
-
                 <ul>
+                    <li>
+                        <Link to="/lessonBot">LessonBot</Link>
+                    </li>
                     <li>
                         <Link to="/faq">FAQ</Link>
                     </li>
