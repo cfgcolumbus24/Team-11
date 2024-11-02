@@ -1,41 +1,53 @@
-/* src/FAQ/faq.css */
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-.faq-container {
-    background-color: #282c34; /* Background color */
-    color: white; /* Text color */
-    min-height: 100vh; /* Full height */
-    text-align: center; /* Center the overall text within the container */
-    font-family: 'Varela Round', sans-serif;
-}
-
+/* Gradient title styling */
 .faq-header {
-    margin-bottom: 10px; /* Space below the header */
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #1aa9a9, #ff6ec7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
-.faq-description {
-    margin: 10px; /* No margin to reduce space */
-}
-
+/* FAQ list container with rounded corners and box shadow */
 .faq-list {
-    padding: 20px; /* Padding for the FAQ list */
-    background-color: #ffffff1b; /* Slightly different background for contrast */
-    border-radius: 8px; /* Rounded corners */
-    width: 100%; /* Full width */
-    max-width: 800px; /* Max width for larger screens */
-    margin: 0 auto; /* Center the list within the container */
-    text-align: left; /* Left-align text within the box */
+    padding: 20px;
+    background-color: #3a3f47;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.faq-question {
-    margin-bottom: 15px; /* Space between questions */
+/* Style for Common Questions header */
+.faq-list h2 {
+    font-size: 3.5rem; /* Make the Common Questions header bigger */
+    font-weight: bold;
+    color: #ffffff; /* Ensure it's readable with a strong color */
+    text-align: left;
+    margin-bottom: 20px;
 }
 
-    .faq-question strong {
-        display: block; /* Block display for strong text */
-        margin-bottom: 5px; /* Space below the question */
-    }
+/* Individual FAQ question styling */
+.faq-question strong {
+    font-size: 1.2rem;
+    color: #1aa9a9;
+}
 
-    .faq-question p {
-        margin: 0; /* No margin for the answer paragraph */
-        padding: 0; /* No padding for the answer paragraph */
-    }
+.faq-question p {
+    padding-left: 10px;
+    color: #d3d3d3;
+    line-height: 1.6;
+}
+
+.faq-container {
+    background-color: #282c34; /* Dark background for the entire FAQ page */
+    color: white;
+    min-height: 100vh;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    padding-top: 40px; /* Increased padding at the top */
+    margin-top: 20px; /* Additional margin to move everything down */
+}

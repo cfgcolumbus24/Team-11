@@ -10,7 +10,6 @@ const FAQ = () => {
             <h1 className="faq-header">FAQ Page</h1>
             <p className="faq-description">Here you can find frequently asked questions.</p>
             <div className="faq-list">
-                <h1>Common Questions</h1>
                 <ul>
                     <li className="faq-question">
                         <strong>How do I create a lesson plan?</strong>
