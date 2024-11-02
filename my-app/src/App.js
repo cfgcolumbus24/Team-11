@@ -8,7 +8,7 @@ function App() {
 
   <div>
     <LLMPage />
-    {/* <LessonInput /> */}
+    <LessonInput />
   </div>
   );
 }
