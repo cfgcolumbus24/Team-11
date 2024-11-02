@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import OpenAI from 'openai';
 
 // Access the API key
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+console.log(process.env.REACT_APP_OPENAI_API_KEY);
 
-console.log(`Your API key is: ${apiKey}`);
 
 
 const LLMPage = ({lessonData}) => {
@@ -30,13 +29,13 @@ const LLMPage = ({lessonData}) => {
 
     try {
       const completion = await openai.chat.completions.create({
-          model: "gpt-3.5-Turbo",
+          model: "gpt-3.5-turbo",
           messages: [
               {
                   role: "user",
                   content: prompt,
               },
-          ],    model: "gpt-3.5-Turbo",
+          ],    model: "gpt-3.5-turbo",
       });
 
       setLessonPlan(completion.choices[0].message.content || 'No response available.');
