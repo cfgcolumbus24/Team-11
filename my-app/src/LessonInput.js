@@ -6,6 +6,8 @@ function LessonInput({onSubmit}) {
   const [subject, setSubject] = useState('');
   const [classSize, setClassSize] = useState('');
   const [time, setTime] = useState('');
+  const [loading, setLoading] = useState(false);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
