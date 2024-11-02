@@ -6,7 +6,7 @@ import Home from './components/Home'; // Ensure you have this component
 import Header from './components/Header';
 import MessageBoard from './components/messageboard';
 import Login from './components/login';
-import Resources from './components/Resources';
+import Resources from './components/resources';
 const AppRouter = () => {
     return (
         <Router>
