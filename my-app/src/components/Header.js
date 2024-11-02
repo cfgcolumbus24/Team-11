@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // If using React Router for navigation
 import './Header.css'; // Optional: for styling
+import MessageBoard  from '../messageboard.js'; // Import the MessageBoard component
 
 const Header = () => {
     return (
@@ -14,13 +15,14 @@ const Header = () => {
             <nav>
                 <ul>
                     <li>
+                        
                         <Link to="/features">Login</Link>
                     </li>
                     <li>
                         <Link to="/faq">FAQ</Link>
                     </li>
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/messageboard">Message Board</Link>
                     </li>
                 </ul>
             </nav>
