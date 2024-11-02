@@ -58,3 +58,11 @@ button:hover {
 p {
     text-align: center;
 }
+
+.page-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    font-style: bold;
+}

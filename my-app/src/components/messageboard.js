@@ -86,7 +86,7 @@ const FirestoreCollection = () => {
     return (
       <div className = "App">
       <Header />
-      <h1>Message Board</h1>
+      <h1 className='page-title'>Message Board</h1>
 
 {!isNewPost&& (<button className="loginbutton" onClick={() => { setIsNewPost(true); }}> New Post</button>)}
 
