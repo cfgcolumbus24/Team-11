@@ -28,7 +28,7 @@ function Login() {
             const userDoc = querySnapshot.docs[0].data();
             if (userDoc.password === password) { // Use secure password handling in production
                 localStorage.setItem('username', username);  // Save username to local storage
-                navigate('/'); // Redirect to message board on successful login
+                navigate('/home'); // Redirect to message board on successful login
             } else {
                 setError('Incorrect password');
             }
