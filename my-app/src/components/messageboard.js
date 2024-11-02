@@ -3,7 +3,7 @@ import logo from '../logo.svg';
 import { useState } from 'react';
 import '../App.css';
 import { dB } from '../firebase.js';
-import { collection, doc, updateDoc, arrayUnion } from 'firebase/firestore';
+import { collection, doc, updateDoc, arrayUnion, addDoc } from 'firebase/firestore';
 import { format } from 'date-fns';
 import Header from './Header';
 const FirestoreCollection = () => {
@@ -11,6 +11,12 @@ const FirestoreCollection = () => {
     const [newReply, setNewReply] =  useState('');
     const [currentPost, setCurrentPostId] = useState(null);
     const [err, setReplyError] = useState(null);
+
+
+    const [isNewPost, setIsNewPost] = useState(false);
+    const [newPost, setNewPostMessage] = useState('');
+    const [newPostTitle, setNewPostTitle] = useState('');
+
     const [err2, setPostError] = useState(null);
 
     const usersRef = collection(dB, 'posts');
@@ -21,26 +27,30 @@ const FirestoreCollection = () => {
 
     const handlePostSubmit = async (e) => {
       e.preventDefault();
-      const reply = {
-        username: 'Anonymous', // Hardcoded for now
-        message: newReply,
-        time: new Date(),
-      }
-      if (newReply.trim() === '') return; // Validate input
-      // Reset the state
-      const postRef = doc(dB, 'posts', currentPost);
-
+      const postsRef = collection(dB, 'posts');
+  
+      // Validate input
+      if (newPost.trim() === '' || newPostTitle.trim() === '') return;
+  
       try {
-        // Update the post document by adding the new reply to the replies array
-        await updateDoc(postRef, {
-            replies: arrayUnion(reply), // Use arrayUnion to add the reply
-        });
-    } catch (err) {
-        setReplyError('Error adding reply: ' + err.message);
-    }
-      setNewReply('');
-      setIsNewReply(false);
-     setCurrentPostId(null);
+          // Add new post to Firestore
+          await addDoc(postsRef, {
+              message: newPost,
+              replies: [],
+              time: new Date(),
+              title: newPostTitle,
+              username: 'Anonymous'  // Placeholder for username
+          });
+  
+          alert('New Post Successfully Added!');
+      } catch (err) {
+          setPostError('Error making post: ' + err.message);
+      } finally {
+          // Reset the state
+          setNewPostMessage('');
+          setIsNewPost(false);
+          setNewPostTitle('');
+      }
   };
 
 
@@ -76,8 +86,29 @@ const FirestoreCollection = () => {
       <>
       <Header />
       <h1>Message Board</h1>
-      <button className= "new-message"> New Post</button>
-    <ul className="message-board">
+
+{!isNewPost&& (<button className="new-reply" onClick={() => { setIsNewPost(true); }}> New Post</button>)}
+
+  {isNewPost && (
+      <form onSubmit={handlePostSubmit}>
+         <textarea
+          value={newPostTitle}
+            onChange={(e) => setNewPostTitle(e.target.value)}
+            placeholder="Write your title..."
+            required
+            rows="1"
+        />
+        <textarea
+          value={newPost}
+            onChange={(e) => setNewPostMessage(e.target.value)}
+            placeholder="Write your message..."
+            required
+            rows="3"
+        />
+         <button type="submit">Submit</button>
+        <button type="button" onClick={() => setIsNewPost(false)}>Cancel</button>
+      </form>
+   )}    <ul className="message-board">
     {value?.docs.map((doc) => {
       const { username, title, message, time, replies } = doc.data();
       return (
