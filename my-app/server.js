@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Ensure the API key is present
 if (!process.env.REACT_APP_OPENAI_API_KEY) {
-  console.error('Error: OPENAI_API_KEY is missing. Make sure it is set in the .env file.');
+  console.error('Error:  REACT_APP_OPENAI_API_KEY is missing. Make sure it is set in the .env file.');
   process.exit(1); // Exit the process if the API key is missing
 }
 

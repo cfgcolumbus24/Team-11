@@ -49,7 +49,7 @@ const LLMPage = ({lessonData}) => {
   return (
     <div>
       <h2>Lesson Plan</h2>
-      {loading ? <p>Loading...</p> : <p>{lessonPlan}</p>}
+      {loading ? <p>Loading...</p> : <p style={{ whiteSpace: 'pre-line'}}>{lessonPlan}</p>}
     </div>
   );
 };

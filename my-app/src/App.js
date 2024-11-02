@@ -12,6 +12,7 @@ import LessonInput from './LessonInput';
 import AppRouter from './router'; // Import the Router
 import HandleLessonSubmit from './HandleLessonSubmit';
 
+
 function App() {
 
   const videos = [
