@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -52,19 +52,19 @@
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #ffffff1a; /* Light gray background for the board */
+  background-color: #ffffff1a;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .message-item {
-  border: 1px solid #ccc; /* Slightly darker border for posts */
+  border: 1px solid #ccc;
   border-radius: 8px;
   padding: 15px;
   margin: 15px 0;
-  background-color: #ffffff; /* White background for messages */
+  background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative; /* For absolute positioning of indicators */
+  position: relative;
   list-style: none;
 }
 
@@ -72,20 +72,20 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  font-size: 1.1em; /* Standard size for headers */
+  font-size: 1.1em;
   color: #333;
 }
 
 .message-title {
   margin: 10px 0;
-  font-size: 1.3em; /* Slightly larger title */
+  font-size: 1.3em;
   color: #333;
   font-weight: bold;
 }
 
 .message-time {
-  font-size: 0.85em; /* Smaller font for timestamps */
-  color: #888; /* Softer gray */
+  font-size: 0.85em;
+  color: #888;
   font-style: italic;
 }
 
@@ -98,15 +98,15 @@
 .reply-list {
   margin-top: 10px;
   padding-left: 20px;
-  border-left: 2px solid #ddd; /* Vertical line for replies */
-  list-style-type: none; /* Remove bullet points */
+  border-left: 2px solid #ddd;
+  list-style-type: none;
 }
 
 .reply-item {
   margin: 5px 0;
   font-size: 0.9em;
   color: #444;
-  background-color: #f6f2fa; /* Light background for replies */
+  background-color: #f6f2fa;
   padding: 8px;
   border-radius: 5px;
 }
@@ -114,18 +114,18 @@
 .reply-header {
   display: flex;
   justify-content: space-between;
-  font-weight: bold; /* Emphasize reply user */
+  font-weight: bold;
 }
 
 .reply-time {
-  font-size: 0.8em; /* Smaller font for reply time */
-  color: #999; /* Softer gray */
+  font-size: 0.8em;
+  color: #999;
 }
 
 .new-reply {
   margin-top: 20px;
   padding: 10px 15px;
-  background-color: #1aaa9; /* Updated to teal */
+  background-color: #1aa9a9; /* Updated to correct teal */
   color: white;
   border: none;
   border-radius: 5px;
@@ -147,23 +147,23 @@
 
 .centered-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  background-color: #282c34; /* Optional: background color for the container */
+  justify-content: center;
+  align-items: center;
+  background-color: #282c34;
 }
 
 .centered-container-white {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  background-color: #ffffff; /* Optional: background color for the container */
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
 }
 
 .inputreply {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #1aaa9; /* Teal border */
+  border: 1px solid #1aa9a9; /* Teal border */
   border-radius: 4px;
   background-color: #FFFFFF;
   color: black;
@@ -174,6 +174,6 @@ button:hover {
 }
 
 .error-message {
-  color: #ff4d4d; /* Red for errors */
+  color: #ff4d4d;
   margin: 10px 0;
 }
