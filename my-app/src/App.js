@@ -28,10 +28,12 @@ function App() {
           <p>
                Edit <code>src/App.js</code> and save to reload.
           </p>
-            <h2 style={{ marginBottom: '5px' }}>Teaching Strategies Videos</h2>
-              <div style={{ overflowX: "auto", whiteSpace: "nowrap", padding: "10px" }}>
+            <h2 style={{ marginBottom: '5px', textAlign: "left"  }}>Teaching Strategies Videos</h2>
+              <div style={{ overflowX: "auto", whiteSpace: "nowrap", padding: "10px 20px", width: "95%"}} className ="Videos">
               {videos.map((video) => (
-              <VideoCard title={video.title} videoId={video.id}></VideoCard>
+                <div key={video.id} style={{ display: "inline-block", width: "300px", marginRight: "10px" }}>
+              <VideoCard title={video.title} videoId={video.id} />
+              </div>
               ))}
               </div>
           <a
