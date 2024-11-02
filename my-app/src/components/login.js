@@ -57,7 +57,7 @@ function Login() {
                 password,  // Store as plain text only for learning; use a hash in production
             });
 
-            alert('User registered successfully!');
+            alert('User registered successfully! You can now log in.');
             setIsRegistering(false);  // Switch back to login mode
         } catch (err) {
             setError('Error registering user: ' + err.message);
