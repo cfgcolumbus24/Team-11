@@ -1,10 +1,10 @@
 import { useCollection } from 'react-firebase-hooks/firestore';
-import logo from './logo.svg';
-import './App.css';
-import { dB } from './firebase.js';
+import logo from '../logo.svg';
+import '../App.css';
+import { dB } from '../firebase.js';
 import { collection } from 'firebase/firestore';
 import { format } from 'date-fns';
-
+import Header from './Header';
 
 const FirestoreCollection = () => {
     const usersRef = collection(dB, 'posts');
@@ -14,7 +14,8 @@ const FirestoreCollection = () => {
 
     return (
       <>
-  <ul className="message-board">
+      <Header />
+    <ul className="message-board">
     {value?.docs.map((doc) => {
       const { username, title, message, time, replies } = doc.data();
       return (

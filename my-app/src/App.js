@@ -1,5 +1,5 @@
 import './App.css';
-import MessageBoard from './messageboard.js';
+import MessageBoard from './components/messageboard.js';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
