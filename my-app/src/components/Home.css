@@ -1,53 +1,64 @@
 .home-container {
-    background-color: #1a1a1a; /* Dark background color */
+    background-color: #1a1a1a; /* Dark background */
     color: #f0f0f0; /* Light text color */
-    min-height: 100vh; /* Ensure it covers the full viewport height */
+    min-height: 100vh;
     padding: 20px;
     text-align: center;
-    margin-top: 20px; /* Adjust space between the header and content */
+    margin-top: 20px;
 }
 
+/* Style for the main content wrapper */
 .content-wrapper {
-    margin: 40px auto; /* Add margin to move the content below the header */
+    margin: 40px auto;
     max-width: 800px;
-    background-color: #333; /* Slightly lighter dark background for contrast */
+    background-color: #333; /* Slightly lighter dark background */
     border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add some shadow for depth */
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.lessonbot-link {
-    display: block;
-    margin: 20px auto;
-}
-
-.lessonbot-logo {
-    max-width: 100%;
-    height: auto;
-}
-
-.welcome-text {
-    font-size: 1.5rem;
-    margin: 20px 0;
-    color: #f0f0f0; /* Light text color */
-}
-
-.navigation-instructions {
-    text-align: left;
-    margin-top: 40px;
-}
-
+/* Style for the Site Navigation header with gradient */
 .navigation-instructions h2 {
     text-decoration: underline;
-    font-size: 1.75rem;
-    margin-bottom: 15px;
-    color: #f0f0f0; /* Light text color */
+    font-size: 2.5rem; /* Larger font size for emphasis */
+    font-weight: bold;
+    color: transparent; /* To apply gradient */
+    background: linear-gradient(to right, #1aa9a9, #ff6ec7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
-.navigation-instructions ul {
-    list-style-type: decimal;
-    margin-left: 40px;
-    font-size: 1.1rem;
+/* Card-like styling for each navigation section */
+.navigation-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #2a2a2a; /* Darker section background */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect to lift each section slightly */
+.navigation-section:hover {
+    background-color: #3a3a3a;
+    transform: translateY(-3px);
+}
+
+/* Bolded title within each navigation section */
+.navigation-section p:first-of-type {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1aa9a9; /* Teal color for emphasis */
+    margin-bottom: 8px;
+}
+
+/* Regular text under the bolded section title */
+.navigation-section p:not(:first-of-type) {
+    font-size: 1.05rem; /* Slightly smaller than title */
+    color: #d1d1d1; /* Light gray for readability */
     line-height: 1.6;
-    color: #d1d1d1; /* Slightly lighter color for readability */
+    margin: 0;
+    padding-left: 15px; /* Indent for visual separation */
 }
