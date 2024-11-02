@@ -13,19 +13,18 @@ const LLMPage = ({lessonData}) => {
 
   
   useEffect(() => {
-    if (lessonData && !loading && !generated) {
+    if (lessonData && !generated) {
+      console.log("before generate " + lessonData);
       handleGenerate(lessonData);
-      console.log("API Key:", apiKey);
+      console.log("after generate " + lessonData);
     }
   }, [lessonData]);
 
   const handleGenerate = async (prompt) => {
-    if (loading) return;
+    if (loading || generated) return;
     setLoading(true);
     const openai = new OpenAI({apiKey: apiKey, dangerouslyAllowBrowser: true});
 
-  //   const throttleTime = 70000; // 20 seconds (20000 ms) between requests to avoid RPM limit
-  // await new Promise(resolve => setTimeout(resolve, throttleTime));
 
     try {
       const completion = await openai.chat.completions.create({

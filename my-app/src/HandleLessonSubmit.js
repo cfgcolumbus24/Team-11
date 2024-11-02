@@ -7,11 +7,7 @@ const HandleLessonSubmit = () => {
 
   const handleLessonSubmit = (data) => {
     // Format the data as a prompt string
-    const prompt = `Create a lesson plan for:
-      - Grade: ${data.grade}
-      - Subject: ${data.subject}
-      - Class Size: ${data.classSize}
-      - Time: ${data.time} minutes`;
+    const prompt = `Create a lesson plan for: Grade: ${data.grade} Subject: ${data.subject} Class Size: ${data.classSize} Time: ${data.time} minutes`;
 
     setLessonData(prompt); // Set formatted prompt for LLMPage
   };
