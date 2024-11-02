@@ -7,6 +7,7 @@ import Header from './components/Header';
 import MessageBoard from './components/messageboard';
 import Login from './components/login';
 import Resources from './components/resources';
+import LessonBot from './LessonBot';
 const AppRouter = () => {
     return (
         <Router>
@@ -16,6 +17,7 @@ const AppRouter = () => {
                 <Route path="/faq" element={<FAQ />} /> {/* FAQ component */}
                 <Route path="/messageboard" element={<MessageBoard />} /> {/* MessageBoard component */}
                 <Route path="/resources" element={<Resources />} /> {/* MessageBoard component */}
+                <Route path="/lessonbot" element={<LessonBot />} /> {/* MessageBoard component */}
 
                 {/* Add more routes as needed */}
             </Routes>

@@ -2,7 +2,7 @@ import Header from './Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import VideoCard from './VideoCard';
-import logo from '../logo.svg';
+import { Link } from 'react-router-dom'; // If using React Router for navigation
 
 function Home() {
    
@@ -16,10 +16,12 @@ function Home() {
     return (
             <div className="Home">
                 <Header />
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
+            <header className="App-header">
+                <Link to="/lessonbot">
+                    <img src="/images/LessonBot.png" alt="logo" />
+                </Link>
                     <p>
-                        Edit <code>src/App.js</code> and save to reload.
+                        Welcome to LessonBot! Press the button to start teaching!
                     </p>
                     <h2 style={{ marginBottom: '5px' }}>Teaching Strategies Videos</h2>
                     <div style={{ overflowX: "auto", whiteSpace: "nowrap", padding: "10px" }}>

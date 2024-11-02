@@ -20,7 +20,7 @@ const LLMPage = () => {
 
   return (
     <div style={{ margin: '20px auto', maxWidth: '800px', fontFamily: 'Arial, sans-serif' }}>
-      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Generate AI Response</h2>
+          <h2 style={{ color: 'white', fontSize: '2.5rem',textAlign: 'center', marginBottom: '20px' }}>Generate AI Response</h2>
       <textarea
         style={{ width: '100%', padding: '10px', fontSize: '16px', borderRadius: '8px', border: '1px solid #ccc' }}
         placeholder="Enter your prompt..."
