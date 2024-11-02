@@ -10,10 +10,12 @@ function Home() {
             <div className="Home">
                 <Header />
             <header className="App-header">
+                <div style={{marginTop:'20px'} }>
                 <Link to="/lessonbot">
                     <img src="/images/LessonBot.png" alt="logo" />
-                </Link>
-                    <p>
+                    </Link>
+                </div>
+                <p style={{marginBottom:'20px'} }>
                         Welcome to LessonBot! Press the button to start teaching!
                     </p>
                 <div style={{marginTop: '60px',padding: '20px',backgroundColor: 'rgba(255, 255, 255, 0.1)',borderRadius: '12px',
