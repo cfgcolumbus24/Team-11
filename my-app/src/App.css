@@ -177,3 +177,34 @@ button:hover {
   color: #ff4d4d;
   margin: 10px 0;
 }
+
+/* Teal Gradient Button */
+.teal-button {
+  background: linear-gradient(to right, #1aa9a9, #148a81); /* Teal gradient */
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+  margin: 5px 0; /* Spacing between buttons */
+}
+
+/* Button hover effect */
+.teal-button:hover {
+  background: linear-gradient(to right, #148a81, #0e7068); /* Darker teal on hover */
+}
+
+/* Gradient style for the Message Board title */
+.page-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  background: linear-gradient(to right, #1aa9a9, #ff6ec7); /* Teal to pink gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
