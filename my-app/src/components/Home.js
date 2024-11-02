@@ -1,5 +1,4 @@
 import Header from './Header';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import VideoCard from './VideoCard';
 import { Link } from 'react-router-dom'; // If using React Router for navigation
@@ -22,21 +21,31 @@ function Home() {
                 </Link>
                     <p>
                         Welcome to LessonBot! Press the button to start teaching!
+                </p>
+                <div style={{padding:'20px',backgroundColor: 'rgba(255, 255, 255, 0.1)', borderRadius: '12px', width: '100%', maxWidth:'1300px', margin: '20px auto', textalign: 'left' }}>
+                <h3 style={{ marginTop: ' 15px', marginLeft: '30px' } }>
+                        <span style={{ textDecoration: 'underline' }}>How to use the website</span>
+                    <p style={{fontSize: '4vmin', marginLeft:'60px'} }>
+                        1. Click the "LessonBot" image to acces our lesson planning and topic summarization tool.
                     </p>
-                    <h2 style={{ marginBottom: '5px' }}>Teaching Strategies Videos</h2>
+                    <p style={{ fontSize: '4vmin', marginLeft: '60px' }}>
+                        2. If you've logged in, click on 'Message Board' in the header to access your school's online forum.
+                        </p>
+                    <p style={{ fontSize: '4vmin', marginLeft: '60px' }}>
+                        3. Click on the 'Resources' in the header to access our list of resources for improving teaching skills as well as resources for lesson planning.
+                        </p>
+                    <p style={{ fontSize: '4vmin', marginLeft: '60px' }}>
+                        4. For troubleshooting and to view some other commonly asked questions click on 'FAQ' in the header.
+                    </p>
+                    </h3>
+                </div>
+                    <h2 style={{ marginBottom: '5px', marginTop:'40px' }}>Teaching Strategies Videos</h2>
                     <div style={{ overflowX: "auto", whiteSpace: "nowrap", padding: "10px" }}>
                         {videos.map((video) => (
                             <VideoCard title={video.title} videoId={video.id}></VideoCard>
                         ))}
                     </div>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
+                   
                 </header>
             </div>
     );
