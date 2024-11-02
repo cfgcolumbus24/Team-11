@@ -19,7 +19,7 @@ const HandleLessonSubmit = () => {
   return (
     <div>
       <LessonInput onSubmit={handleLessonSubmit} />
-      {lessonData && <LLMPage initialPrompt={lessonData} />}
+      {lessonData && <LLMPage lessonData={lessonData} />}
     </div>
   );
 };
