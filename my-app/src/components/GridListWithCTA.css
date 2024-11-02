@@ -1,0 +1,59 @@
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .cta-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .cta-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cta-description {
+    display: flex;
+    align-items: center;
+  }
+  
+  .divider {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+  }
+  
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .grid-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .feature-heading {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
