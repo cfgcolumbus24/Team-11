@@ -4,6 +4,7 @@ import { getDocs, query, where, collection, addDoc } from 'firebase/firestore';
 import { dB } from '../firebase.js';
 import Header from './Header';
 import { useNavigate } from 'react-router-dom';
+import '../loginpage.css'
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -64,7 +65,7 @@ function Login() {
     };
 
     return (
-        <div>
+        <div id= "amazing">
             <form onSubmit={isRegistering ? handleRegister : handleLogin}>
                 <input 
                     type="text" 
