@@ -3,14 +3,15 @@ import { useState } from 'react';
 import { getDocs, query, where, collection, addDoc } from 'firebase/firestore';
 import { dB } from '../firebase.js';
 import Header from './Header';
+import { useNavigate } from 'react-router-dom';
 
-
-function Login({ onLogin }) {
+function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
     const [isRegistering, setIsRegistering] = useState(false);
 
+    const navigate = useNavigate();
     const handleLogin = async (e) => {
         e.preventDefault();
         const usersRef = collection(dB, 'users');
@@ -25,8 +26,9 @@ function Login({ onLogin }) {
             }
 
             const userDoc = querySnapshot.docs[0].data();
-            if (userDoc.password === password) {  // For better security, use password hashing
-                onLogin();  // Trigger successful login
+            if (userDoc.password === password) { // Use secure password handling in production
+                localStorage.setItem('username', username);  // Save username to local storage
+                navigate('/'); // Redirect to message board on successful login
             } else {
                 setError('Incorrect password');
             }
@@ -63,7 +65,6 @@ function Login({ onLogin }) {
 
     return (
         <div>
-            <Header/>
             <form onSubmit={isRegistering ? handleRegister : handleLogin}>
                 <input 
                     type="text" 

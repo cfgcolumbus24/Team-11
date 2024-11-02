@@ -39,7 +39,7 @@ const FirestoreCollection = () => {
               replies: [],
               time: new Date(),
               title: newPostTitle,
-              username: 'Anonymous'  // Placeholder for username
+              username: localStorage.getItem('username')  // Placeholder for username
           });
   
           alert('New Post Successfully Added!');
@@ -58,7 +58,7 @@ const FirestoreCollection = () => {
     const handleReplySubmit = async (e) => {
       e.preventDefault();
       const reply = {
-        username: 'Anonymous', // Hardcoded for now
+        username: localStorage.getItem('username'), // Hardcoded for now
         message: newReply,
         time: new Date(),
       }
