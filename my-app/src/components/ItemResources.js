@@ -2,13 +2,13 @@ import React from 'react'
 
 const ItemResources = ({title, link, description}) => {
   return (
-    <li  style={{ display: 'flex', alignItems: 'center', marginBottom: '50px' }}>
+    <li  style={{ display: 'flex', alignItems: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '20px', backgroundColor: 'rgba(255, 255, 255, 0.1)', height: '100px', borderRadius:'40px' }}>
         <a href={link}
         style={{
         padding: '10px 20px',
-        backgroundColor: '#e0f7fa', // light blue background
+        backgroundColor: '#821bd1', // light blue background
         borderRadius: '25px', // rounded edges to create bubble shape
-        color: '#00796b', // link text color
+        color: 'white', // link text color
         textDecoration: 'none', // remove underline
         display: 'inline-block', // ensure padding is respected
         fontWeight: 'bold',
@@ -16,7 +16,7 @@ const ItemResources = ({title, link, description}) => {
         
       }}
         >{title}</a>
-        <div>{description}</div>
+        <div style = {{color: 'white'}}>{description}</div>
     </li>
   )
 }
