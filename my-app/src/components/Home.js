@@ -1,42 +1,42 @@
 import Header from './Header';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import VideoCard from './VideoCard';
 import { Link } from 'react-router-dom'; // If using React Router for navigation
 
 function Home() {
    
-    const videos = [
-        { id: "y_v_G7ub-n0", title: "Research-Backed Strategies for Better Classroom Management" },
-        { id: "EH_C5GyF1sM", title: "Effective Teaching Strategies for the Classroom" },
-        { id: "_jdTtnWMLVM", title: "The 5 Principles of Highly Effective Teachers" },
-        { id: "RlEwNUxLoD4", title: "Effective Lesson Planning: Procedures and Tips" },
-        { id: "lpZ4x93h7Hw", title: "Vocabulary Teaching Strategies" },
-    ];
+
     return (
             <div className="Home">
                 <Header />
             <header className="App-header">
+                <div style={{marginTop:'20px'} }>
                 <Link to="/lessonbot">
                     <img src="/images/LessonBot.png" alt="logo" />
-                </Link>
-                    <p>
+                    </Link>
+                </div>
+                <p style={{marginBottom:'20px'} }>
                         Welcome to LessonBot! Press the button to start teaching!
                     </p>
-                    <h2 style={{ marginBottom: '5px' }}>Teaching Strategies Videos</h2>
-                    <div style={{ overflowX: "auto", whiteSpace: "nowrap", padding: "10px" }}>
-                        {videos.map((video) => (
-                            <VideoCard title={video.title} videoId={video.id}></VideoCard>
-                        ))}
-                    </div>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
+                <div style={{marginTop: '60px',padding: '20px',backgroundColor: 'rgba(255, 255, 255, 0.1)',borderRadius: '12px',
+                    width: '100%', maxWidth: '1300px', margin: '0 auto', textAlign: 'left', marginBottom: '80px'}}>
+                    <h2 style={{ marginLeft: '30px' }}>
+                        <span style={{ textDecoration: 'underline' }}>How navigate the site</span>
+                    </h2>
+                    <p style={{ fontSize: '4vmin', marginLeft:'50px' }}>
+                        1. Click on the "LessonBot" image to access our lesson plan generation and topic summarization tool.
+                    </p>
+                    <p style={{ fontSize: '4vmin', marginLeft: '50px' }}>
+                       2. Click on 'Resources' in the header to access teaching improvement and lesson planning resources and videos.
+                    </p>
+                    <p style={{ fontSize: '4vmin', marginLeft: '50px' }}>
+                       3. If you're logged in, click on 'Message Board' in the header to access your school's online forum.
+                    </p>
+                    <p style={{ fontSize: '4vmin', marginLeft: '50px' }}>
+                       4. For any further questions click on 'FAQ' in the header to view some common problems.
+                    </p>
+                </div>
+           
                 </header>
             </div>
     );
