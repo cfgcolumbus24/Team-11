@@ -10,6 +10,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LLMPage from './LLMPage'; 
 import LessonInput from './LessonInput'; 
 import AppRouter from './router'; // Import the Router
+import HandleLessonSubmit from './HandleLessonSubmit';
+
 
 function App() {
 
@@ -21,8 +23,12 @@ function App() {
   { id: "lpZ4x93h7Hw", title: "Vocabulary Teaching Strategies" },
 ];
     return (
-      <AppRouter>
-      <div className="App">
+    <div>
+      <HandleLessonSubmit/>
+
+     
+      {/* <AppRouter>
+        <div className="App">
               <Header />
          <header className="App-header">
                     <img src="/images/LessonBot.png" alt="logo" />
@@ -48,7 +54,8 @@ function App() {
           </a>
           </header>
       </div>
-  </AppRouter>
+  </AppRouter> */}
+  </div>
 );
 }
 
