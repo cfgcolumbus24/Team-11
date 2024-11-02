@@ -2,11 +2,9 @@ import './App.css';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import VideoCard from './components/VideoCard';
-import Header from './components/Header';
-import { BrowserRouter } from 'react-router-dom';
-import React from 'react';
+import logo from './logo.svg';
+import AppRouter from './router'; // Import the Router
 
 function App() {
 
@@ -17,10 +15,10 @@ function App() {
   { id: "RlEwNUxLoD4", title: "Effective Lesson Planning: Procedures and Tips" },
   { id: "lpZ4x93h7Hw", title: "Vocabulary Teaching Strategies" },
 ];
-  return (
-      <BrowserRouter>
+    return (
+      <AppRouter>
       <div className="App">
-         <Header />
+              <Header />
          <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -42,7 +40,7 @@ function App() {
           </a>
           </header>
       </div>
-  </BrowserRouter>
+  </AppRouter>
 );
 }
 
