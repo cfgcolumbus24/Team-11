@@ -1,29 +1,45 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+
 /* src/components/Header.css */
 .header {
+    font-family: 'Varela Round', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: black;
-    color: white;
+    padding: 20px 40px; /* Top/Bottom and Left/Right padding */
+    background-color: black; /* Background color */
+    color: white; /* Text color */
+    font-weight: 600; /* Set a thicker font weight, adjust as needed */
 }
 
     .header .logo {
-        
+        display: flex; /* Use flex to align logo and name horizontally */
+        align-items: center; /* Center them vertically */
+    }
+
+        .header .logo img {
+            height: 80px; /* Set logo height */
+            margin-right: 10px; /* Space between logo and text */
+        }
+
+    .header .name {
+        font-size: 40px; /* Font size for the site name */
+        text-align: left; /* Align text to the left */
     }
 
     .header nav ul {
-        list-style: none;
-        display: flex;
-        gap: 15px;
-        color:white;
+        list-style: none; /* Remove bullet points */
+        display: flex; /* Horizontal layout for nav items */
+        gap: 15px; /* Space between items */
     }
 
     .header nav a {
-        color: white;
-        text-decoration: none;
+        color: white; /* Link color */
+        text-decoration: none; /* Remove underline */
     }
 
         .header nav a:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* Underline on hover */
         }
