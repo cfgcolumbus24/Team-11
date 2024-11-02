@@ -208,3 +208,112 @@ button:hover {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+
+
+
+/* Gradient title styling for LessonBot */
+.gradient-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #1aa9a9, #ff6ec7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Lesson form container styling */
+.lesson-form {
+  background: linear-gradient(to bottom right, #1aa9a9, #148a81);
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Form title styling */
+.form-title {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Input field styling */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Submit button styling */
+.submit-button {
+  background: linear-gradient(to right, #1aa9a9, #ff6ec7);
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #148a81, #e65aa1);
+}
+
+/* Container styling for LLMPage */
+.llm-container {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Text area styling */
+.prompt-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+/* Generate button styling */
+.generate-button {
+  background: linear-gradient(to right, #1aa9a9, #ff6ec7);
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.generate-button:hover {
+  background: linear-gradient(to right, #148a81, #e65aa1);
+}
+
+/* Lesson output styling */
+.lesson-output {
+  background-color: #444;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  margin-top: 20px;
+  text-align: left;
+}
