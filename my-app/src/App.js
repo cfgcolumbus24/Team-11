@@ -7,7 +7,9 @@ import Header from './components/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import VideoCard from './components/VideoCard';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LLMPage from './LLMPage'; 
+import LessonInput from './LessonInput'; 
 import AppRouter from './router'; // Import the Router
 
 function App() {
@@ -36,6 +38,7 @@ function App() {
               </div>
               ))}
               </div>
+        <LLMPage />
           <a
               className="App-link"
               href="https://reactjs.org"
