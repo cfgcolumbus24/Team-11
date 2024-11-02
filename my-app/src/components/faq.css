@@ -1,0 +1,40 @@
+/* src/FAQ/faq.css */
+
+.faq-container {
+    background-color: #282c34; /* Background color */
+    color: white; /* Text color */
+    min-height: 100vh; /* Full height */
+    text-align: center; /* Center the overall text within the container */
+}
+
+.faq-header {
+    margin-bottom: 10px; /* Space below the header */
+}
+
+.faq-description {
+    margin: 10px; /* No margin to reduce space */
+}
+
+.faq-list {
+    padding: 20px; /* Padding for the FAQ list */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly different background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto; /* Center the list within the container */
+    text-align: left; /* Left-align text within the box */
+}
+
+.faq-question {
+    margin-bottom: 15px; /* Space between questions */
+}
+
+    .faq-question strong {
+        display: block; /* Block display for strong text */
+        margin-bottom: 5px; /* Space below the question */
+    }
+
+    .faq-question p {
+        margin: 0; /* No margin for the answer paragraph */
+        padding: 0; /* No padding for the answer paragraph */
+    }
