@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
-  text-align: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #282c34;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
@@ -20,14 +27,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(30px + 2vmin);
   color: white;
 }
 
-
 .Videos {
-  padding: "10px 20px",
-
+  padding: 10px 20px;
 }
 
 .App-link {
@@ -47,19 +52,19 @@
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #f2f2f2; /* Light gray background for the board */
+  background-color: #ffffff1a;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .message-item {
-  border: 1px solid #ccc; /* Slightly darker border for posts */
+  border: 1px solid #ccc;
   border-radius: 8px;
   padding: 15px;
   margin: 15px 0;
-  background-color: #ffffff; /* White background for messages */
+  background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative; /* For absolute positioning of indicators */
+  position: relative;
   list-style: none;
 }
 
@@ -67,20 +72,20 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  font-size: 1.1em; /* Standard size for headers */
+  font-size: 1.1em;
   color: #333;
 }
 
 .message-title {
   margin: 10px 0;
-  font-size: 1.3em; /* Slightly larger title */
+  font-size: 1.3em;
   color: #333;
   font-weight: bold;
 }
 
 .message-time {
-  font-size: 0.85em; /* Smaller font for timestamps */
-  color: #888; /* Softer gray */
+  font-size: 0.85em;
+  color: #888;
   font-style: italic;
 }
 
@@ -93,15 +98,15 @@
 .reply-list {
   margin-top: 10px;
   padding-left: 20px;
-  border-left: 2px solid #ddd; /* Vertical line for replies */
-  list-style-type: none; /* Remove bullet points */
+  border-left: 2px solid #ddd;
+  list-style-type: none;
 }
 
 .reply-item {
   margin: 5px 0;
   font-size: 0.9em;
   color: #444;
-  background-color: #e9f7f9; /* Light blue background for replies */
+  background-color: #f6f2fa;
   padding: 8px;
   border-radius: 5px;
 }
@@ -109,19 +114,18 @@
 .reply-header {
   display: flex;
   justify-content: space-between;
-  font-weight: bold; /* Emphasize reply user */
+  font-weight: bold;
 }
 
 .reply-time {
-  font-size: 0.8em; /* Smaller font for reply time */
-  color: #999; /* Softer gray */
+  font-size: 0.8em;
+  color: #999;
 }
 
-/* Optional: Style for a "New Reply" button */
 .new-reply {
   margin-top: 20px;
   padding: 10px 15px;
-  background-color: #007bff; /* Bootstrap blue */
+  background-color: #1aa9a9; /* Updated to correct teal */
   color: white;
   border: none;
   border-radius: 5px;
@@ -130,5 +134,186 @@
 }
 
 .new-reply:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #148a81; /* Darker teal on hover */
+}
+
+.replyform {
+  background-color: #3a3f47;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 300px;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #282c34;
+}
+
+.centered-container-white {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.inputreply {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #1aa9a9; /* Teal border */
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+button:hover {
+  background-color: #148a81; /* Teal hover color */
+}
+
+.error-message {
+  color: #ff4d4d;
+  margin: 10px 0;
+}
+
+/* Teal Gradient Button */
+.teal-button {
+  background: linear-gradient(to right, #1aa9a9, #148a81); /* Teal gradient */
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+  margin: 5px 0; /* Spacing between buttons */
+}
+
+/* Button hover effect */
+.teal-button:hover {
+  background: linear-gradient(to right, #148a81, #0e7068); /* Darker teal on hover */
+}
+
+/* Gradient style for the Message Board title */
+.page-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  background: linear-gradient(to right, #1aa9a9, #ff6ec7); /* Teal to pink gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+
+/* Gradient title styling for LessonBot */
+.gradient-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #1aa9a9, #ff6ec7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Lesson form container styling */
+.lesson-form {
+  background: linear-gradient(to bottom right, #1aa9a9, #148a81);
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Form title styling */
+.form-title {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Input field styling */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Submit button styling */
+.submit-button {
+  background: linear-gradient(to right, #1aa9a9, #ff6ec7);
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #148a81, #e65aa1);
+}
+
+/* Container styling for LLMPage */
+.llm-container {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Text area styling */
+.prompt-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+/* Generate button styling */
+.generate-button {
+  background: linear-gradient(to right, #1aa9a9, #ff6ec7);
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.generate-button:hover {
+  background: linear-gradient(to right, #148a81, #e65aa1);
+}
+
+/* Lesson output styling */
+.lesson-output {
+  background-color: #444;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  margin-top: 20px;
+  text-align: left;
 }

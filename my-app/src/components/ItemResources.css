@@ -1,0 +1,42 @@
+/* Container for each resource item */
+.resource-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 15px 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: auto;
+    gap: 15px;
+}
+
+/* Link button styling with teal gradient */
+.resource-link {
+    padding: 12px 24px;
+    background: linear-gradient(to right, #1aa9a9, #148a81);
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    width: 150px;
+    text-align: center;
+}
+
+.resource-link:hover {
+    background: linear-gradient(to right, #148a81, #0e7068);
+}
+
+/* Description styling */
+.resource-description {
+    color: #ddd;
+    font-size: 0.95em;
+    line-height: 1.5;
+    flex: 1;
+    margin-left: 10px;
+}

@@ -3,14 +3,16 @@ import { useState } from 'react';
 import { getDocs, query, where, collection, addDoc } from 'firebase/firestore';
 import { dB } from '../firebase.js';
 import Header from './Header';
+import { useNavigate } from 'react-router-dom';
+import '../loginpage.css'
 
-
-function Login({ onLogin }) {
+function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
     const [isRegistering, setIsRegistering] = useState(false);
 
+    const navigate = useNavigate();
     const handleLogin = async (e) => {
         e.preventDefault();
         const usersRef = collection(dB, 'users');
@@ -25,8 +27,9 @@ function Login({ onLogin }) {
             }
 
             const userDoc = querySnapshot.docs[0].data();
-            if (userDoc.password === password) {  // For better security, use password hashing
-                onLogin();  // Trigger successful login
+            if (userDoc.password === password) { // Use secure password handling in production
+                localStorage.setItem('username', username);  // Save username to local storage
+                navigate('/home'); // Redirect to message board on successful login
             } else {
                 setError('Incorrect password');
             }
@@ -54,7 +57,7 @@ function Login({ onLogin }) {
                 password,  // Store as plain text only for learning; use a hash in production
             });
 
-            alert('User registered successfully!');
+            alert('User registered successfully! You can now log in.');
             setIsRegistering(false);  // Switch back to login mode
         } catch (err) {
             setError('Error registering user: ' + err.message);
@@ -62,10 +65,10 @@ function Login({ onLogin }) {
     };
 
     return (
-        <div>
-            <Header/>
-            <form onSubmit={isRegistering ? handleRegister : handleLogin}>
+        <div id= "amazing">
+            <form className='loginform' onSubmit={isRegistering ? handleRegister : handleLogin}>
                 <input 
+                    className='inputlogin'
                     type="text" 
                     placeholder="Username" 
                     value={username} 
@@ -73,25 +76,26 @@ function Login({ onLogin }) {
                     required 
                 />
                 <input 
+                    className='inputlogin'
                     type="password" 
                     placeholder="Password" 
                     value={password} 
                     onChange={(e) => setPassword(e.target.value)} 
                     required 
                 />
-                <button type="submit">{isRegistering ? 'Register' : 'Login'}</button>
+                <button className= 'loginbutton'type="submit">{isRegistering ? 'Register' : 'Login'}</button>
             </form>
             {error && <p>{error}</p>}
             <p>
                 {isRegistering ? (
                     <span>
                         Already have an account?{' '}
-                        <button onClick={() => setIsRegistering(false)}>Log in</button>
+                        <button className= 'loginbutton' onClick={() => setIsRegistering(false)}>Log in</button>
                     </span>
                 ) : (
                     <span>
                         New user?{' '}
-                        <button onClick={() => setIsRegistering(true)}>Register</button>
+                        <button className= 'loginbutton' onClick={() => setIsRegistering(true)}>Register</button>
                     </span>
                 )}
             </p>

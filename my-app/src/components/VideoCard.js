@@ -22,6 +22,17 @@ const VideoCard = ({ title, videoId }) => {
             allowFullScreen
             style={{borderRadius:"10%"}}
           ></iframe>
+          <div
+          style={{
+        padding: '10px',
+        backgroundColor: '#821bd1', // light blue background
+        borderRadius: '25px', // rounded edges to create bubble shape
+        color: 'white', // link text color
+        textDecoration: 'none', // remove underline
+        display: 'inline-block', // ensure padding is respected
+        fontWeight: 'bold',
+        marginRight: '20px'}}
+        >
           <p 
            style={{
               whiteSpace: "nowrap",     
@@ -32,6 +43,7 @@ const VideoCard = ({ title, videoId }) => {
             }}      
           >
           {title}</p>
+          </div>
         </div>
 
   )
