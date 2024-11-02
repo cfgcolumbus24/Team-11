@@ -3,7 +3,7 @@ import logo from '../logo.svg';
 import { useState } from 'react';
 import '../App.css';
 import { dB } from '../firebase.js';
-import { collection, doc, updateDoc, arrayUnion, addDoc } from 'firebase/firestore';
+import { collection, doc, updateDoc, arrayUnion, addDoc, orderBy, query } from 'firebase/firestore';
 import { format } from 'date-fns';
 import Header from './Header';
 const FirestoreCollection = () => {
@@ -20,10 +20,11 @@ const FirestoreCollection = () => {
     const [err2, setPostError] = useState(null);
 
     const usersRef = collection(dB, 'posts');
-    const [value, loading, error] = useCollection(usersRef, {
+    const q = query(usersRef, orderBy('time', 'desc')); // Order by time descending
+
+    const [value, loading, error] = useCollection(q, {
         snapshotListenOptions: { includeMetadataChanges: true },
     });
-
 
     const handlePostSubmit = async (e) => {
       e.preventDefault();
@@ -123,16 +124,18 @@ const FirestoreCollection = () => {
           {/* Only render replies if they exist */}
           {replies && replies.length > 0 && (
             <ul className="reply-list">
-              {replies.map((reply, index) => (
-                <li className="reply-item" key={index}>
-                  <div className="reply-header">
-                    <strong>{reply.username}</strong>
-                    <span className="reply-time">{format(reply.time.toDate(), 'MMMM dd, yyyy HH:mm:ss')}</span>
-                  </div>
-                  {reply.message}
-                </li>
-              ))}
-            </ul>
+            {replies
+                .sort((a, b) => b.time - a.time) // Sort replies by time descending
+                .map((reply, index) => (
+                    <li className="reply-item" key={index}>
+                        <div className="reply-header">
+                            <strong>{reply.username}</strong>
+                            <span className="reply-time">{format(reply.time.toDate(), 'MMMM dd, yyyy HH:mm:ss')}</span>
+                        </div>
+                        {reply.message}
+                    </li>
+                ))}
+        </ul>
           )}
           {/* Optional: New Reply Button */}
   {(!isNewReply || doc.id!=currentPost)&& (<button className="new-reply" onClick={() => { setIsNewReply(true); setCurrentPostId(doc.id); }}> New Reply</button>)}
