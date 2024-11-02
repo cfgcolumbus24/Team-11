@@ -1,52 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import OpenAI from 'openai';
+import { generateAIResponse } from './generateAi';
 
-const LLMPage = () => {
-  const [prompt, setPrompt] = useState('');
+const LLMPage = ({lessonData}) => {
   const [lessonPlan, setLessonPlan] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleGenerate = async () => {
+
+  useEffect(() => {
+    if (lessonData) {
+      handleGenerate(lessonData);
+    }
+  }, [lessonData]);
+
+  const handleGenerate = async (prompt) => {
     setLoading(true);
+    const openai = new OpenAI({apiKey: process.env.REACT_APP_OPENAI_API_KEY});
+
     try {
-      const response = await axios.post('http://localhost:5000/generate', { prompt });
-      setLessonPlan(response.data.response || 'No response available.');
+      const completion = await openai.chat.completions.create({
+          model: "gpt-4o-mini",
+          messages: [
+              { role: "system", content: "You are a helpful assistant." },
+              {
+                  role: "user",
+                  content: "Write a haiku about recursion in programming.",
+              },
+          ],    model: "gpt-4o-mini",
+          messages: [
+              { role: "system", content: "You are a helpful assistant." },
+              {
+                  role: "user",
+                  content: "Write a haiku about recursion in programming.",
+              },
+          ],
+      });
+
+      setLessonPlan(completion.choices[0].message.content || 'No response available.');
     } catch (error) {
       console.error('Error generating content:', error);
       setLessonPlan('Error generating response.');
     }
+
     setLoading(false);
   };
 
   return (
     <div style={{ margin: '20px auto', maxWidth: '800px', fontFamily: 'Arial, sans-serif' }}>
       <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Generate AI Response</h2>
-      <textarea
-        style={{ width: '100%', padding: '10px', fontSize: '16px', borderRadius: '8px', border: '1px solid #ccc' }}
-        placeholder="Enter your prompt..."
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-        rows={4}
-      />
-      <button
-        onClick={handleGenerate}
-        disabled={loading}
-        style={{
-          display: 'block',
-          margin: '20px auto',
-          padding: '10px 20px',
-          fontSize: '16px',
-          backgroundColor: '#007BFF',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-          cursor: 'pointer'
-        }}
-      >
-        {loading ? 'Generating...' : 'Generate'}
-      </button>
-
-      {lessonPlan && (
+      {loading ? (
+        <p>Generating...</p>
+      ) : (
         <div style={{ marginTop: '20px' }}>
           <h3>Lesson Plan</h3>
           <p>{lessonPlan}</p>

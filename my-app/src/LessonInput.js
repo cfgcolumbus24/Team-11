@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './input.css';
 
-function LessonInput() {
+function LessonInput({onSubmit}) {
   const [grade, setGrade] = useState('');
   const [subject, setSubject] = useState('');
   const [classSize, setClassSize] = useState('');
@@ -10,6 +10,7 @@ function LessonInput() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Class Info:", { grade, subject, classSize, time });
+    onSubmit({grade, subject, classSize, time});
   };
 
   return (
