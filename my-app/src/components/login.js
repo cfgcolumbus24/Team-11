@@ -66,8 +66,9 @@ function Login() {
 
     return (
         <div id= "amazing">
-            <form onSubmit={isRegistering ? handleRegister : handleLogin}>
+            <form className='loginform' onSubmit={isRegistering ? handleRegister : handleLogin}>
                 <input 
+                    className='inputlogin'
                     type="text" 
                     placeholder="Username" 
                     value={username} 
@@ -75,25 +76,26 @@ function Login() {
                     required 
                 />
                 <input 
+                    className='inputlogin'
                     type="password" 
                     placeholder="Password" 
                     value={password} 
                     onChange={(e) => setPassword(e.target.value)} 
                     required 
                 />
-                <button type="submit">{isRegistering ? 'Register' : 'Login'}</button>
+                <button className= 'loginbutton'type="submit">{isRegistering ? 'Register' : 'Login'}</button>
             </form>
             {error && <p>{error}</p>}
             <p>
                 {isRegistering ? (
                     <span>
                         Already have an account?{' '}
-                        <button onClick={() => setIsRegistering(false)}>Log in</button>
+                        <button className= 'loginbutton' onClick={() => setIsRegistering(false)}>Log in</button>
                     </span>
                 ) : (
                     <span>
                         New user?{' '}
-                        <button onClick={() => setIsRegistering(true)}>Register</button>
+                        <button className= 'loginbutton' onClick={() => setIsRegistering(true)}>Register</button>
                     </span>
                 )}
             </p>
