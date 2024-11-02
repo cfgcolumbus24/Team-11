@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom';
 
 function Home() {
     return (
+            <div className="Home">
+                <Header />
+            <header className="App-header">
+                <div style={{marginTop:'30px'} }>
+                <Link to="/lessonbot">
+                    <img src="/images/LessonBot.png" alt="logo" />
         <div className="min-h-screen bg-gradient-to-b from-gray-800 to-gray-600 text-white">
             <Header />
             <div className="container mx-auto mt-12 p-6 bg-gray-700 bg-opacity-80 rounded-lg shadow-lg">
@@ -13,6 +19,13 @@ function Home() {
                         <img src="/images/LessonBot.png" alt="LessonBot Logo" className="w-64 h-auto" />
                     </Link>
                 </div>
+                <p style={{marginBottom:'20px', marginTop:'90px'} }>
+                        Welcome to LessonBot! Press the button to start teaching!
+                    </p>
+                <div style={{marginTop: '60px',padding: '20px',backgroundColor: 'rgba(255, 255, 255, 0.1)',borderRadius: '12px',
+                    width: '100%', maxWidth: '1300px', margin: '0 auto', textAlign: 'left', marginBottom: '80px'}}>
+                    <h2 style={{ marginLeft: '30px' }}>
+                        <span style={{ textDecoration: 'underline' }}>How navigate the site</span>
                 <p className="text-center text-4xl font-semibold mb-12 bg-gradient-to-r from-pink-500 to-teal-500 text-transparent bg-clip-text">
                     Welcome to LessonBot! Press the button to start teaching!
                 </p>
