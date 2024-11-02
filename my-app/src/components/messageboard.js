@@ -84,7 +84,7 @@ const FirestoreCollection = () => {
 
 
     return (
-      <>
+      <div className = "App">
       <Header />
       <h1>Message Board</h1>
 
@@ -109,7 +109,9 @@ const FirestoreCollection = () => {
          <button type="submit">Submit</button>
         <button type="button" onClick={() => setIsNewPost(false)}>Cancel</button>
       </form>
-   )}    <ul className="message-board">
+
+   )}   
+    <ul className="message-board">
     {value?.docs.map((doc) => {
       const { username, title, message, time, replies } = doc.data();
       return (
@@ -160,7 +162,7 @@ const FirestoreCollection = () => {
   </ul>
   
   
-</>
+  </div>
         
     );
   };

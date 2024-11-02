@@ -18,7 +18,7 @@
 
 .faq-list {
     padding: 20px; /* Padding for the FAQ list */
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly different background for contrast */
+    background-color: #ffffff1b; /* Slightly different background for contrast */
     border-radius: 8px; /* Rounded corners */
     width: 100%; /* Full width */
     max-width: 800px; /* Max width for larger screens */
