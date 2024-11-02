@@ -251,6 +251,7 @@ button:hover {
   outline: none;
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
+  color: #3a3f47
 }
 
 /* Submit button styling */

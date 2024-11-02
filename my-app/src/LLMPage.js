@@ -58,44 +58,52 @@
 
 // export default LLMPage;
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-const LLMPage = () => {
-  const [prompt, setPrompt] = useState('');
+import OpenAI from 'openai';
+const LLMPage = ({lessonData}) => {
   const [lessonPlan, setLessonPlan] = useState('');
   const [loading, setLoading] = useState(false);
+  const [generated, setGenerated] = useState(false);
+const apiKey=process.env.REACT_APP_OPENAI_API_KEY;
+  
+  useEffect(() => {
+    if (lessonData && !generated) {
+      console.log("before generate " + lessonData);
+      handleGenerate(lessonData);
+      console.log("after generate " + lessonData);
+    }
+  }, [lessonData]);
 
-  const handleGenerate = async () => {
+  const handleGenerate = async (prompt) => {
+    if (loading || generated) return;
     setLoading(true);
+    const openai = new OpenAI({apiKey: apiKey, dangerouslyAllowBrowser: true});
+
+
     try {
-      const response = await axios.post('http://localhost:5000/generate', { prompt });
-      setLessonPlan(response.data.response || 'No response available.');
+      const completion = await openai.chat.completions.create({
+          model: "gpt-3.5-turbo",
+          messages: [
+              {
+                  role: "user",
+                  content: prompt,
+              },
+          ],    model: "gpt-3.5-turbo",
+      });
+
+      setLessonPlan(completion.choices[0].message.content || 'No response available.');
+      setGenerated(true);
     } catch (error) {
       console.error('Error generating content:', error);
       setLessonPlan('Error generating response.');
     }
+
     setLoading(false);
   };
 
   return (
-    <div className="llm-container">
-      <h2 className="gradient-title">Generate AI Response</h2>
-      <textarea
-        className="prompt-input"
-        placeholder="Enter your prompt..."
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-        rows={4}
-      />
-      <button
-        onClick={handleGenerate}
-        disabled={loading}
-        className="generate-button"
-      >
-        {loading ? 'Generating...' : 'Generate'}
-      </button>
-
+    <div className="lesson-container">
       {lessonPlan && (
         <div className="lesson-output">
           <h3>Lesson Plan</h3>
