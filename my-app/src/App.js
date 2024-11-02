@@ -1,9 +1,13 @@
+import { useState } from 'react';
+import logo from './logo.svg';
 import './App.css';
+import MessageBoard from './components/messageboard.js';
+import Login from './components/login.js';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import VideoCard from './components/VideoCard';
-import logo from './logo.svg';
+
 import AppRouter from './router'; // Import the Router
 
 function App() {

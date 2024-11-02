@@ -14,18 +14,19 @@ const Header = () => {
             <nav>
 
                 <ul>
-                    <li>
-                        <Link to="/Resources">Login</Link>
+                    <li>     
+                        <Link to="/login">Login</Link>
                     </li>
                     <li>
                         <Link to="/faq">FAQ</Link>
                     </li>
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/messageboard">Message Board</Link>
                     </li>
                     <li>
                         <Link to="/resources">Resources</Link>
                     </li>
+                
                 </ul>
             </nav>
         </header>
