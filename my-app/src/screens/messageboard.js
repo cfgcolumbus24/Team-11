@@ -4,7 +4,7 @@ import '../App.css';
 import { dB } from '../firebase.js';
 import { collection } from 'firebase/firestore';
 import { format } from 'date-fns';
-import Header from './Header';
+import Header from '../components/Header.js';
 
 const FirestoreCollection = () => {
     const usersRef = collection(dB, 'posts');

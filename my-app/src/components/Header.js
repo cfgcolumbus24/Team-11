@@ -15,16 +15,16 @@ const Header = () => {
 
                 <ul>
                     <li>     
-                        <Link to="/login">Login</Link>
+                        <Link to="../screens/login">Login</Link>
                     </li>
                     <li>
-                        <Link to="/faq">FAQ</Link>
+                        <Link to="../screens/faq">FAQ</Link>
                     </li>
                     <li>
-                        <Link to="/messageboard">Message Board</Link>
+                        <Link to="../screens/messageboard">Message Board</Link>
                     </li>
                     <li>
-                        <Link to="/resources">Resources</Link>
+                        <Link to="../screens/resources">Resources</Link>
                     </li>
                 
                 </ul>

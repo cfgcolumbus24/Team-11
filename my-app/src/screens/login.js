@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { getDocs, query, where, collection, addDoc } from 'firebase/firestore';
 import { dB } from '../firebase.js';
-import Header from './Header';
+import Header from '../components/Header.js';
 
 
 function Login({ onLogin }) {
