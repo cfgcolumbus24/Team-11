@@ -1,10 +1,11 @@
 /* src/FAQ/faq.css */
-
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 .faq-container {
     background-color: #282c34; /* Background color */
     color: white; /* Text color */
     min-height: 100vh; /* Full height */
     text-align: center; /* Center the overall text within the container */
+    font-family: 'Varela Round', sans-serif;
 }
 
 .faq-header {

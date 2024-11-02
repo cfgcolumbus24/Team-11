@@ -10,6 +10,9 @@ const Header = () => {
                 <Link to="/">
                     <img src="/images/oplogo.png" alt="Logo" style={{ height: '80px' }} />
                 </Link>
+                <div className="name">
+                    Class Craft
+                </div>
             </div>
             <nav>
 
