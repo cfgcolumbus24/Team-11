@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <header className="header">
             <div className="logo">
-                <Link to="/">
+                <Link to="/home">
                     <img src="/images/oplogo.png" alt="Logo" style={{ height: '80px' }} />
                 </Link>
                 <div className="name">
@@ -17,9 +17,6 @@ const Header = () => {
             <nav>
 
                 <ul>
-                    <li>     
-                        <Link to="/login">Login</Link>
-                    </li>
                     <li>
                         <Link to="/faq">FAQ</Link>
                     </li>
@@ -29,7 +26,9 @@ const Header = () => {
                     <li>
                         <Link to="/resources">Resources</Link>
                     </li>
-                
+                    <li>     
+                        <Link to="/login">Sign Out</Link>
+                    </li>
                 </ul>
             </nav>
         </header>
