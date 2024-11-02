@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // If using React Router for navigation
 import './Header.css'; // Optional: for styling
-import FAQPage from '../FAQ/page';
 
 const Header = () => {
     return (
@@ -13,6 +12,7 @@ const Header = () => {
                 </Link>
             </div>
             <nav>
+
                 <ul>
                     <li>
                         <Link to="/features">Login</Link>
@@ -22,6 +22,9 @@ const Header = () => {
                     </li>
                     <li>
                         <Link to="/contact">Contact</Link>
+                    </li>
+                    <li>
+                        <Link to="/resources">Resources</Link>
                     </li>
                 </ul>
             </nav>
