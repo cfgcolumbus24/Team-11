@@ -88,11 +88,13 @@ const FirestoreCollection = () => {
       <Header />
       <h1>Message Board</h1>
 
-{!isNewPost&& (<button className="new-reply" onClick={() => { setIsNewPost(true); }}> New Post</button>)}
+{!isNewPost&& (<button className="loginbutton" onClick={() => { setIsNewPost(true); }}> New Post</button>)}
 
   {isNewPost && (
-      <form onSubmit={handlePostSubmit}>
+    <div className='centered-container'>
+      <form  className='loginform' onSubmit={handlePostSubmit}>
          <textarea
+          className='inputlogin'
           value={newPostTitle}
             onChange={(e) => setNewPostTitle(e.target.value)}
             placeholder="Write your title..."
@@ -100,16 +102,17 @@ const FirestoreCollection = () => {
             rows="1"
         />
         <textarea
+          className='inputlogin'
           value={newPost}
             onChange={(e) => setNewPostMessage(e.target.value)}
             placeholder="Write your message..."
             required
             rows="3"
         />
-         <button type="submit">Submit</button>
-        <button type="button" onClick={() => setIsNewPost(false)}>Cancel</button>
+         <button className='loginbutton' type="submit">Submit</button>
+        <button className='loginbutton' type="button" onClick={() => setIsNewPost(false)}>Cancel</button>
       </form>
-
+    </div>
    )}   
     <ul className="message-board">
     {value?.docs.map((doc) => {
@@ -140,20 +143,23 @@ const FirestoreCollection = () => {
         </ul>
           )}
           {/* Optional: New Reply Button */}
-  {(!isNewReply || doc.id!=currentPost)&& (<button className="new-reply" onClick={() => { setIsNewReply(true); setCurrentPostId(doc.id); }}> New Reply</button>)}
+  {(!isNewReply || doc.id!=currentPost)&& (<button className="loginbutton" onClick={() => { setIsNewReply(true); setCurrentPostId(doc.id); }}> New Reply</button>)}
 
   {isNewReply && doc.id == currentPost && (
-      <form onSubmit={handleReplySubmit}>
+    <div className='centered-container-white'>
+      <form className='replyform'onSubmit={handleReplySubmit}>
          <textarea
+          className='inputreply'
           value={newReply}
             onChange={(e) => setNewReply(e.target.value)}
             placeholder="Write your reply..."
             required
             rows="3"
         />
-         <button type="submit">Submit</button>
-        <button type="button" onClick={() => setIsNewReply(false)}>Cancel</button>
+         <button className='loginbutton' type="submit">Submit</button>
+        <button  className='loginbutton' type="button" onClick={() => setIsNewReply(false)}>Cancel</button>
       </form>
+    </div>
    )}
    {error && <p>{error}</p>}
         </li>

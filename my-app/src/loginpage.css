@@ -28,8 +28,7 @@
     border-radius: 4px;
     background-color: #2a2d32;
     color: white;
-    
-}
+}   
 
 input::placeholder {
     color: #bbb;
@@ -44,6 +43,7 @@ input::placeholder {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-bottom: 5px;
 }
 
 button:hover {
