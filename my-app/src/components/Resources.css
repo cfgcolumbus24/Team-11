@@ -1,0 +1,41 @@
+/* Centered container for the entire resources page */
+.resources-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #282c34; /* Dark background color */
+    color: white; /* Ensure text is readable against the dark background */
+}
+
+/* Gradient heading styling */
+.gradient-heading {
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(to right, #1aa9a9, #ff6ec7); /* Teal to pink gradient */
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 30px 0 20px;
+    text-align: center;
+}
+
+/* List styling for resources */
+.resources-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Adjust spacing for video list */
+.videos-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+/* Video card container to align items neatly */
+.video-card-container {
+    width: 300px;
+}

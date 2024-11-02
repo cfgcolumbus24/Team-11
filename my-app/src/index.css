@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Monserat', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #282c34; /* Dark background color for entire page */
+    color: white; /* Default text color for readability */
 }
 
 code {
     font-family: 'Inter', sans-serif;
+}
 
+/* Ensuring full viewport height for page content */
+html, body, #root {
+    height: 100%;
 }
